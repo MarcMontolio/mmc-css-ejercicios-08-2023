@@ -1,0 +1,162 @@
+<!-- Ejercicios - Selectores avanzados 2
+
+Enunciado
+
+A partir de la página web que se te proporciona, debes escribir las reglas CSS necesarias para lograr una página web que tenga el mismo aspecto que la siguiente imagen:
+
+Captura de pantalla del ejercicio
+
+En la imagen anterior se muestra lo que debe ocurrir al situar el cursor del ratón sobre una de las filas de datos de la tabla: el color de fondo de las celdas debe cambiar a amarillo (#FFFF66).
+
+Nota: busca en Internet las imágenes necesarias para representar los símbolos de las diferentes monedas. Las imágenes las debes colocar como imágenes decorativas desde CSS.
+
+Código base
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ejemplo de selectores avanzados</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Cambio</th>
+    <th>Compra</th>
+    <th>Venta</th>
+    <th>Máximo</th>
+    <th>Mínimo</th>
+  </tr>
+  <tr>
+    <th class="euro">Euro/Dolar</th>
+    <td>1.25</td>
+    <td>1.25</td>
+    <td>1.25</td>
+    <td>1.24</td>
+  </tr>
+  <tr>
+    <th class="dolar">Dolar/Yen</th>
+    <td>119.01</td>
+    <td>119.05</td>
+    <td>119.82</td>
+    <td>119.82</td>
+  </tr>
+  <tr>
+    <th class="libra">Libra/Dolar</th>
+    <td>1.86</td>
+    <td>1.86</td>
+    <td>1.86</td>
+    <td>1.85</td>
+  </tr>
+  <tr>
+    <th class="yen">Yen/Euro</th>
+    <td>0.67</td>
+    <td>0.67</td>
+    <td>0.66</td>
+    <td>0.67</td>
+  </tr>
+</table>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo de selectores avanzados</title>
+    <style>
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid #333;
+        line-height: 2em;
+      }
+
+      th {
+        background-color: #f5f5f5;
+        padding: 0 0.5em;
+      }
+
+      td {
+        padding: 0 0.3em;
+      }
+
+      th.euro {
+        background: #e6f3ff url(imagenes/euro.png) no-repeat left center;
+        padding: 0 0.3em 0 1.2em;
+      }
+
+      th.dolar {
+        background: #e6f3ff url(imagenes/dolar.png) no-repeat left center;
+        padding: 0 0.3em 0 1.2em;
+      }
+
+      th.libra {
+        background: #e6f3ff url(imagenes/libra.png) no-repeat left center;
+        padding: 0 0.3em 0 1.2em;
+      }
+
+      th.yen {
+        background: #e6f3ff url(imagenes/yen.png) no-repeat left center;
+        padding: 0 0.3em 0 1.2em;
+      }
+
+      tr:nth-child(n + 1) td {
+        text-align: right;
+      }
+
+      tr:nth-child(2n) {
+        background-color: #ffffcc;
+      }
+
+      tr:hover {
+        background: #ffff66;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Cambio</th>
+        <th>Compra</th>
+        <th>Venta</th>
+        <th>Máximo</th>
+        <th>Mínimo</th>
+      </tr>
+      <tr>
+        <th class="euro">Euro/Dolar</th>
+        <td>1.25</td>
+        <td>1.25</td>
+        <td>1.25</td>
+        <td>1.24</td>
+      </tr>
+      <tr>
+        <th class="dolar">Dolar/Yen</th>
+        <td>119.01</td>
+        <td>119.05</td>
+        <td>119.82</td>
+        <td>119.82</td>
+      </tr>
+      <tr>
+        <th class="libra">Libra/Dolar</th>
+        <td>1.86</td>
+        <td>1.86</td>
+        <td>1.86</td>
+        <td>1.85</td>
+      </tr>
+      <tr>
+        <th class="yen">Yen/Euro</th>
+        <td>0.67</td>
+        <td>0.67</td>
+        <td>0.66</td>
+        <td>0.67</td>
+      </tr>
+    </table>
+  </body>
+</html>
